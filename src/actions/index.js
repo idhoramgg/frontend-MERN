@@ -20,8 +20,8 @@ import {
   FETCH_COMMENTS,
 } from './types';
 
-// const ROOT_URL = 'https://ido-api.herokuapp.com';
-const ROOT_URL = 'http://localhost:4000';
+const ROOT_URL = 'https://ido-api.herokuapp.com';
+// const ROOT_URL = 'http://localhost:4000';
 
 /**
  * Authentication
