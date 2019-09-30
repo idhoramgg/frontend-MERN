@@ -230,6 +230,7 @@ export function createPost({ title, categories, content }, historyPush, historyR
         historyReplace('/posts/new', {
           time: new Date().toLocaleString(),
           message: response.data.message,
+          
         });
       });
   }
