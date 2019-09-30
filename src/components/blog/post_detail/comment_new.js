@@ -51,6 +51,11 @@ class CommentNew extends Component {
     );
   }
 }
+// const mapStateToProps = state => {
+//   return {
+//     postId: state.auth.postId
+//   };
+// };
 
 CommentNew = reduxForm({
   form: 'comment_new',  // name of the form
