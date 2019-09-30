@@ -7,9 +7,7 @@ class PostNew extends Component {
 
   handleFormSubmit({ title, categories, content }) {
     const username = this.props.username;
-    // console.log(title);
-    // console.log(categories);
-    // console.log(content);
+   
     this.props.createPost({ title, categories, content, username }, (path) => {  // callback 1: history push
       this.props.history.push(path);
     }, (path, state) => {  // callback 2: history replace
