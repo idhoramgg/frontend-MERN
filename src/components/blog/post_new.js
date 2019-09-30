@@ -6,11 +6,11 @@ import { createPost } from '../../actions';
 class PostNew extends Component {
 
   handleFormSubmit({ title, categories, content }) {
-
-    console.log(title);
-    console.log(categories);
-    console.log(content);
-    this.props.createPost({ title, categories, content }, (path) => {  // callback 1: history push
+    const username = this.props.username;
+    // console.log(title);
+    // console.log(categories);
+    // console.log(content);
+    this.props.createPost({ title, categories, content, username }, (path) => {  // callback 1: history push
       this.props.history.push(path);
     }, (path, state) => {  // callback 2: history replace
       this.props.history.replace(path, state);
@@ -71,9 +71,14 @@ class PostNew extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    username: state.auth.username
+  };
+};
 
 PostNew = reduxForm({
   form: 'post_new',  // name of the form
 })(PostNew);
 
-export default connect(null, { createPost })(PostNew);
+export default connect(mapStateToProps, { createPost })(PostNew);
